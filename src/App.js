@@ -1,8 +1,9 @@
-import React, { useState , useReducer } from 'react'
+import React, { useState , useReducer, useEffect } from 'react'
 import logo from './logo.svg';
 import './App.css';
 import TodoItem from './TodoItem.js'
 import CreateItem from './CreateItem'
+import cookie from 'react-cookies'
 
 function App() {
   const [title, setTitle] = useState("")
@@ -60,6 +61,11 @@ setTodos(tempTodos)
 forceUpdate()
 
 }
+
+useEffect(function(){
+
+
+}, [])
 
 var todoList = todos.map(function(info){
   return <TodoItem deleteTodo={deleteTodo} key={info.id} item={info} />
